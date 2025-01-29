@@ -4,3 +4,5 @@
 [submodule "back-LMS-clinical-simulation"]
 	path = back-LMS-clinical-simulation
 	url = https://github.com/TG-16-PUJ/back-LMS-clinical-simulation.git
+[submodule "*"]
+	branch = dev
