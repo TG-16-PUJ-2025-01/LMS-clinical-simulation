@@ -7,7 +7,19 @@ cd LMS-clinical-simulation
 git submodule update --init --recursive
 ```
 
-### Update submodules
+### Fetching updates
 ```bash
-git submodule update --recursive --remote
+git pull
+git submodule foreach --recursive git checkout <BRANCH_NAME>
+```
+
+### Switching branches
+```bash
+git checkout <BRANCH_NAME>
+git submodule foreach --recursive git checkout <BRANCH_NAME>
+```
+
+### Run command on all submodules
+```bash
+git submodule foreach --recursive <COMMAND>
 ```
