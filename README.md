@@ -10,7 +10,7 @@ git submodule update --init --recursive
 ### Fetching updates
 ```bash
 git pull
-git submodule foreach --recursive git checkout <BRANCH_NAME>
+git submodule foreach --recursive git pull
 ```
 
 ### Switching branches
