@@ -1,0 +1,43 @@
+services:
+  frontend:
+    image: ghcr.io/tg-16-puj-2025-01/front-lms-clinical-simulation:0.1.1
+    container_name: frontend
+    restart: always
+    ports:
+      - 80:80
+    env_file:
+      - .env
+    depends_on:
+      - backend
+  backend:
+    image: ghcr.io/tg-16-puj-2025-01/back-lms-clinical-simulation:0.1.1
+    container_name: backend
+    restart: always
+    ports:
+      - 8080:8080
+    env_file:
+      - .env
+    depends_on:
+      - db_prod
+  db_prod:
+    image: postgres:14-alpine
+    restart: always
+    healthcheck:
+      test: "pg_isready -U ${DB_USER} --dbname=${DB_NAME}"
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    container_name: db_prod
+    ports:
+      - ${DB_PORT}:5432
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - db_prod_volume:/var/lib/postgresql/data
+    env_file:
+      - .env
+
+volumes:
+  db_prod_volume:
