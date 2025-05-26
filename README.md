@@ -1,7 +1,5 @@
 # LMS-clinical-simulation
 
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/TG-16-PUJ-2025-01/LMS-clinical-simulation)
-
 ## Introducción
 - Nombre del proyecto: Sistema de gestión de aprendizaje para el Centro de Simulación Clínica de la Pontificia Universidad Javeriana 
 - Descripción: Aplicación web para visualizar, calificar y retroalimentar videos de simulaciones académicas. El objetivo es simplificar el trabajo de los profesores al momento de calificar, permitiendo que los estudiantes no solo puedan entender dónde se equivocaron, sino también poder reclamar con evidencias en el caso de que no esté de acuerdo.  
